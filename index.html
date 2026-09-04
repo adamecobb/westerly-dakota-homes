@@ -906,12 +906,13 @@
 
     if(match && renderUnit(parseInt(match[1],10))){
       siteMapView.classList.add('view-hidden');
-      unitView.classList.add('view-hidden');
+      unitView.classList.remove('view-hidden');
       unitView.style.display = 'block';
       siteMapView.style.display = 'none';
-      unitView.classList.remove('view-hidden');
       window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
     } else {
+      unitView.classList.add('view-hidden');
+      siteMapView.classList.remove('view-hidden');
       unitView.style.display = 'none';
       siteMapView.style.display = 'block';
       if(scrollTarget){
